@@ -1,6 +1,15 @@
 #include <sourcemod>
 #include <sdktools>
 
+public Plugin:myinfo=
+{
+	name = "ban open door too frequent",
+	author = "NiceT",
+	description = "ban open door too frequent",
+	version = "1.0",
+	url = ""
+}
+
 public OnPluginStart()
 {
      AddCommandListener(BanIDLE, "go_away_from_keyboard");
@@ -13,8 +22,8 @@ public Action:BanIDLE(int Client, const char[] sCommand, int iArg)
 	{
           if(GetClientTeam(Client) == 2)
           {
-				PrintHintText(Client, "\x03 You were been controled, you can't idle!");
-				return Plugin_Stop;
+                PrintHintText(Client, "\x03 You were been controled, you can't idle!");
+				        return Plugin_Stop;
           }
 	}
 	return Plugin_Continue;
@@ -22,15 +31,15 @@ public Action:BanIDLE(int Client, const char[] sCommand, int iArg)
 
 bool PlayerBeenControled(Client)
 {
-	if(GetEntPropEnt(Client, Prop_Send, "m_pummelAttacker") > 0)
-		return true;
-	if(GetEntPropEnt(Client, Prop_Send, "m_carryAttacker") > 0)
-		return true;
-	if(GetEntPropEnt(Client, Prop_Send, "m_pounceAttacker") > 0)
-		return true;
-	if(GetEntPropEnt(Client, Prop_Send, "m_jockeyAttacker") > 0)
-		return true;
-	if(GetEntPropEnt(Client, Prop_Send, "m_tongueOwner") > 0)
-		return true;
-	return false;
+	       if(GetEntPropEnt(Client, Prop_Send, "m_pummelAttacker") > 0)
+		          return true;
+	       if(GetEntPropEnt(Client, Prop_Send, "m_carryAttacker") > 0)
+		          return true;
+	       if(GetEntPropEnt(Client, Prop_Send, "m_pounceAttacker") > 0)
+		          return true;
+	       if(GetEntPropEnt(Client, Prop_Send, "m_jockeyAttacker") > 0)
+		          return true;
+	       if(GetEntPropEnt(Client, Prop_Send, "m_tongueOwner") > 0)
+		          return true;
+	       return false;
 }
