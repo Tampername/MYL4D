@@ -424,4 +424,4 @@ public Action:ZedBlendBack(Handle:Timer, Handle:h_pack)
 	{
 		PrintToServer("[SM] i_Ent is not a valid edict!");
 	}
-}	
+}
