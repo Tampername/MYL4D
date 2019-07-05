@@ -4,7 +4,7 @@ public Plugin:myinfo =
 {
         name = " easy Welcome",
         author = "NiceT",
-        description = "east Welcome",
+        description = "easy Welcome",
         version = "1.0",
         url = ""
 }

@@ -3,9 +3,9 @@
 
 public Plugin:myinfo=
 {
-	name = "ban open door too frequent",
+	name = "easy ban open door too frequent",
 	author = "NiceT",
-	description = "ban open door too frequent",
+	description = "easy ban open door too frequent",
 	version = "1.0",
 	url = ""
 }
