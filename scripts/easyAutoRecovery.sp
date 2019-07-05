@@ -27,20 +27,20 @@ public Plugin:myinfo =
 }
 
 public OnPluginStart(){
-    l4d_recovery_enable     = CreateConVar("l4d_recovery_enable", "1", "0 = enable | 1 = disable");
-    l4d_recovery_limit      = CreateConVar("l4d_recovery_limit", "100", "The maximum HP can recover");
+    l4d_recovery_enable     = CreateConVar("l4d_recovery_enable", 	"1", "0 = enable | 1 = disable");
+    l4d_recovery_limit      = CreateConVar("l4d_recovery_limit", 	"100", "The maximum HP can recover");
 
-    l4d_recovery_hpH        = CreateConVar("l4d_recovery_hpH", "60", "The minimum high level HP recover point");
-    l4d_recovery_hpM        = CreateConVar("l4d_recovery_hpM", "20", "The minimum medium level HP recover point");
-    l4d_recovery_hpL        = CreateConVar("l4d_recovery_hpL", "0", "The minimum low level HP recover point");
+    l4d_recovery_hpH        = CreateConVar("l4d_recovery_hpH", 		"60", "The minimum high level HP recover point");
+    l4d_recovery_hpM        = CreateConVar("l4d_recovery_hpM", 		"20", "The minimum medium level HP recover point");
+    l4d_recovery_hpL        = CreateConVar("l4d_recovery_hpL", 		"0", "The minimum low level HP recover point");
 
-    l4d_recovery_durationH  = CreateConVar("l4d_recovery_durationH", "10.0", "The time of high level HP per recover need spend");
-    l4d_recovery_durationM  = CreateConVar("l4d_recovery_durationM", "6.0", "The time of medium level HP per recover need spend");
-    l4d_recovery_durationL  = CreateConVar("l4d_recovery_durationL", "3.0", "The time of low level HP per recover need spend");
+    l4d_recovery_durationH  = CreateConVar("l4d_recovery_durationH", 	"10.0", "The time of high level HP per recover need spend");
+    l4d_recovery_durationM  = CreateConVar("l4d_recovery_durationM", 	"6.0", "The time of medium level HP per recover need spend");
+    l4d_recovery_durationL  = CreateConVar("l4d_recovery_durationL", 	"3.0", "The time of low level HP per recover need spend");
 
-    l4d_recovery_quantityH  = CreateConVar("l4d_recovery_quantityH", "1", "The quantity of high level HP per recover");
-    l4d_recovery_quantityM  = CreateConVar("l4d_recovery_quantityM", "2", "The quantity of medium level HP per recover");
-    l4d_recovery_quantityL  = CreateConVar("l4d_recovery_quantityL", "5", "the quantity of low level HP per recover");
+    l4d_recovery_quantityH  = CreateConVar("l4d_recovery_quantityH", 	"1", "The quantity of high level HP per recover");
+    l4d_recovery_quantityM  = CreateConVar("l4d_recovery_quantityM", 	"2", "The quantity of medium level HP per recover");
+    l4d_recovery_quantityL  = CreateConVar("l4d_recovery_quantityL", 	"5", "the quantity of low level HP per recover");
 
     HookEvent("player_hurt", OnPlayerRecovery);
     AutoExecConfig(true, "l4d_recovery");
