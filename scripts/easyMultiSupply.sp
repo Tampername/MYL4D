@@ -10,7 +10,7 @@ public Plugin:myinfo =
 {
 	name = "easy multi-supply",
 	author = "NiceT",
-	description = "multi-supply",
+	description = "easy multi-supply",
 	version = PLUGIN_VERSION,
 	url = ""
 };
