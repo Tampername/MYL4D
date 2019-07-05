@@ -32,7 +32,7 @@ new String:MeleeClass[16][32];
 
 public Plugin:myinfo =
 {
-	name = "wasy melee give",
+	name = "easy melee give",
 	author = "NiceT",
 	description = "at the start of each round spawn some melee",
 	version = VERSION
