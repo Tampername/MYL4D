@@ -11,7 +11,7 @@ new iDirectionCache[MAXPLAYERS+1] = 0;
 
 public Plugin:myinfo=
 {
-	name = "bunnyhop",
+	name = "easy bunnyhop",
 	author = "NiceT",
 	description = "bunnyhop",
 	version = "1.0",
@@ -44,7 +44,7 @@ public Action:Event_RoundStart(Handle:event, const String:name[], bool:dontBroad
 	{
 		if (IsClientInGame(i))
 		{
-            OnBunnyHop[i] = 0;
+            		OnBunnyHop[i] = 0;
 		}
      }
 }
