@@ -46,21 +46,21 @@ public OnPluginStart()
 		SetFailState( "Melee In The Saferoom is only supported on left 4 dead 2." );
 
 	CreateConVar( "l4d2_Melee_Give_Version",		VERSION, "The version of Melee In The Saferoom", FCVAR_FLAG );
-	Enabled								= CreateConVar( "l4d2_Melee_Enabled",		    "1", "1 = plugin enable", FCVAR_FLAG );
-	WeaponRandom					= CreateConVar( "l4d2_Melee_Give_Random",		"0", "1 = random | 0 = customized", FCVAR_FLAG );
-	WeaponRandomAmount		= CreateConVar( "l4d2_Melee_Give_Amount",		"0", "Number of weapons produced,if l4d2_Melee_Give_Random = 1", FCVAR_FLAG );
+	Enabled				= CreateConVar( "l4d2_Melee_Enabled",		"1", "1 = plugin enable", FCVAR_FLAG );
+	WeaponRandom			= CreateConVar( "l4d2_Melee_Give_Random",	"0", "1 = random | 0 = customized", FCVAR_FLAG );
+	WeaponRandomAmount		= CreateConVar( "l4d2_Melee_Give_Amount",	"0", "Number of weapons produced,if l4d2_Melee_Give_Random = 1", FCVAR_FLAG );
 	WeaponBaseballBat 		= CreateConVar( "l4d2_Melee_Give_BaseballBat",	"0", "BaseballBat (l4d2_Melee_Give_Random must be 0)", FCVAR_FLAG );
-	WeaponCricketBat 			= CreateConVar( "l4d2_Melee_Give_CricketBat", 	"0", "CricketBat (l4d2_Melee_Give_Random must be 0)", FCVAR_FLAG );
-	WeaponCrowbar 				= CreateConVar( "l4d2_Melee_Give_Crowbar", 	    "0", "Crowbar (l4d2_Melee_Give_Random must be 0)", FCVAR_FLAG );
-	WeaponElecGuitar			= CreateConVar( "l4d2_Melee_Give_ElecGuitar",	"0", "ElecGuitar (l4d2_Melee_Give_Random must be 0)", FCVAR_FLAG );
-	WeaponFireAxe					= CreateConVar( "l4d2_Melee_Give_FireAxe",		"2", "FireAxe (l4d2_Melee_Give_Random must be 0)", FCVAR_FLAG );
-	WeaponFryingPan				= CreateConVar( "l4d2_Melee_Give_FryingPan",	"0", "FryingPan (l4d2_Melee_Give_Random must be 0)", FCVAR_FLAG );
-	WeaponGolfClub				= CreateConVar( "l4d2_Melee_Give_GolfClub",	    "0", "GolfClub (l4d2_Melee_Give_Random must be 0)", FCVAR_FLAG );
-	WeaponKnife						= CreateConVar( "l4d2_Melee_Give_Knife",		"0", "Knife (l4d2_Melee_Give_Random must be 0)", FCVAR_FLAG );
-	WeaponKatana					= CreateConVar( "l4d2_Melee_Give_Katana",		"0", "Katana (l4d2_Melee_Give_Random must be 0)", FCVAR_FLAG );
-	WeaponMachete					= CreateConVar( "l4d2_Melee_Give_Machete",		"0", "Machete (l4d2_Melee_Give_Random must be 0)", FCVAR_FLAG );
-	WeaponRiotShield			= CreateConVar( "l4d2_Melee_Give_RiotShield",	"0", "RiotShield (l4d2_Melee_Give_Random must be 0)", FCVAR_FLAG );
-	WeaponTonfa						= CreateConVar( "l4d2_Melee_Give_Tonfa",		"0", "Tonfa (l4d2_Melee_Give_Random must be 0)", FCVAR_FLAG );
+	WeaponCricketBat 		= CreateConVar( "l4d2_Melee_Give_CricketBat", 	"0", "CricketBat (l4d2_Melee_Give_Random must be 0)", FCVAR_FLAG );
+	WeaponCrowbar 			= CreateConVar( "l4d2_Melee_Give_Crowbar", 	"0", "Crowbar (l4d2_Melee_Give_Random must be 0)", FCVAR_FLAG );
+	WeaponElecGuitar		= CreateConVar( "l4d2_Melee_Give_ElecGuitar",	"0", "ElecGuitar (l4d2_Melee_Give_Random must be 0)", FCVAR_FLAG );
+	WeaponFireAxe			= CreateConVar( "l4d2_Melee_Give_FireAxe",	"2", "FireAxe (l4d2_Melee_Give_Random must be 0)", FCVAR_FLAG );
+	WeaponFryingPan			= CreateConVar( "l4d2_Melee_Give_FryingPan",	"0", "FryingPan (l4d2_Melee_Give_Random must be 0)", FCVAR_FLAG );
+	WeaponGolfClub			= CreateConVar( "l4d2_Melee_Give_GolfClub",	"0", "GolfClub (l4d2_Melee_Give_Random must be 0)", FCVAR_FLAG );
+	WeaponKnife			= CreateConVar( "l4d2_Melee_Give_Knife",	"0", "Knife (l4d2_Melee_Give_Random must be 0)", FCVAR_FLAG );
+	WeaponKatana			= CreateConVar( "l4d2_Melee_Give_Katana",	"0", "Katana (l4d2_Melee_Give_Random must be 0)", FCVAR_FLAG );
+	WeaponMachete			= CreateConVar( "l4d2_Melee_Give_Machete",	"0", "Machete (l4d2_Melee_Give_Random must be 0)", FCVAR_FLAG );
+	WeaponRiotShield		= CreateConVar( "l4d2_Melee_Give_RiotShield",	"0", "RiotShield (l4d2_Melee_Give_Random must be 0)", FCVAR_FLAG );
+	WeaponTonfa			= CreateConVar( "l4d2_Melee_Give_Tonfa",	"0", "Tonfa (l4d2_Melee_Give_Random must be 0)", FCVAR_FLAG );
 	AutoExecConfig( true, "MeleeInTheSaferoom" );
 
 	HookEvent( "round_start", Event_RoundStart );
