@@ -48,25 +48,25 @@ public OnPluginStart()
 
 	// the algorithm about the chance :  value == 1 means 100% triggers     value == 10 means 10% triggers   value == x means (1/x)% triggers
 
-	ZedModes 					= CreateConVar("l4d2_zed_modes", "coop,versus,realism,teamversus", "which mode enable plugin", FCVAR_FLAG);
-	Enable 						= CreateConVar("l4d2_zed_time_enable", 				"1", 	"enable plugin", FCVAR_FLAG);
-	TeamRestrict 				= CreateConVar("l4d2_zed_restrict", 				"3", 	"1=survivor,2=Infected,3=all", FCVAR_FLAG);
-	ZedAmazing 					= CreateConVar("l4d2_zed_extreme_shot", 			"150", 	"Triggers if the distance is greater than this value multiplicate 16", FCVAR_FLAG);
-	ZedTimer					= CreateConVar("l4d2_zed_timer", 					"0.5", 	"Duration of the slow motion", FCVAR_FLAG);
-	ZedSurvivorchance 			= CreateConVar("l4d2_zed_surv_chance", 				"20", 	"How many chances kill  the zombies  trigger the slow motion", FCVAR_FLAG);
-	ZedPipeChance 				= CreateConVar("l4d2_zed_pipe_chance", 				"5", 	"How many chances throw the pipebomb trigger the slow motion", FCVAR_FLAG);
-	ZedWitch 					= CreateConVar("l4d2_zed_witch", 					"10", 	"How many chances kill  the witch    trigger the slow motion", FCVAR_FLAG);
-	ZedTank 					= CreateConVar("l4d2_zed_tank", 					"2",  	"How many chances kill  the tank     trigger the slow motion", FCVAR_FLAG);
-	ZedCharger 					= CreateConVar("l4d2_zed_charger", 					"1", 	"charger Can trigger slow motion", FCVAR_FLAG);
-	ZedSmoker 					= CreateConVar("l4d2_zed_smoker",				 	"1", 	"Smokers Can trigger slow motion", FCVAR_FLAG);
-	ZedJockey 					= CreateConVar("l4d2_zed_jockey", 					"1", 	"Jockeys Can trigger slow motion", FCVAR_FLAG);
-	ZedHunter 					= CreateConVar("l4d2_zed_hunter", 					"1", 	"Hunters Can trigger slow motion", FCVAR_FLAG);
-	ZedBoomer 					= CreateConVar("l4d2_zed_boomer", 					"1", 	"Boomers Can trigger slow motion", FCVAR_FLAG);
-	ZedChargerExplosionChance 	= CreateConVar("l4d2_zed_charger_explosion_chance", "10", 	"How many chances does the boomer   trigger the slow motion", FCVAR_FLAG);
-	ZedSmokerExplosionChance 	= CreateConVar("l4d2_zed_smoker_explosion_chance", 	"10", 	"How many chances does the boomer   trigger the slow motion", FCVAR_FLAG);
-	ZedJockeyExplosionChance 	= CreateConVar("l4d2_zed_jackey_explosion_chance", 	"10", 	"How many chances does the boomer   trigger the slow motion", FCVAR_FLAG);
-	ZedHunterExplosionChance 	= CreateConVar("l4d2_zed_hunter_explosion_chance", 	"10", 	"How many chances does the boomer   trigger the slow motion", FCVAR_FLAG);
-	ZedBoomerExplosionChance 	= CreateConVar("l4d2_zed_boomer_explosion_chance", 	"5",  	"How many chances does the boomer   trigger the slow motion", FCVAR_FLAG);
+	ZedModes 			= CreateConVar("l4d2_zed_modes", "coop,versus,realism,teamversus", "which mode enable plugin", FCVAR_FLAG);
+	Enable 				= CreateConVar("l4d2_zed_time_enable", 			"1", 	"enable plugin", FCVAR_FLAG);
+	TeamRestrict 			= CreateConVar("l4d2_zed_restrict", 			"3", 	"1=survivor,2=Infected,3=all", FCVAR_FLAG);
+	ZedAmazing 			= CreateConVar("l4d2_zed_extreme_shot", 		"150", 	"Triggers if the distance is greater than this value multiplicate 16", FCVAR_FLAG);
+	ZedTimer			= CreateConVar("l4d2_zed_timer", 			"0.5", 	"Duration of the slow motion", FCVAR_FLAG);
+	ZedCharger 			= CreateConVar("l4d2_zed_charger", 			"1", 	"charger Can trigger slow motion", FCVAR_FLAG);
+	ZedSmoker 			= CreateConVar("l4d2_zed_smoker",			"1", 	"Smokers Can trigger slow motion", FCVAR_FLAG);
+	ZedJockey 			= CreateConVar("l4d2_zed_jockey", 			"1", 	"Jockeys Can trigger slow motion", FCVAR_FLAG);
+	ZedHunter 			= CreateConVar("l4d2_zed_hunter", 			"1", 	"Hunters Can trigger slow motion", FCVAR_FLAG);
+	ZedBoomer 			= CreateConVar("l4d2_zed_boomer", 			"1", 	"Boomers Can trigger slow motion", FCVAR_FLAG);
+	ZedSurvivorchance 		= CreateConVar("l4d2_zed_surv_chance", 			"20", 	"How many chances kill  the zombies  trigger the slow motion", FCVAR_FLAG);
+	ZedPipeChance 			= CreateConVar("l4d2_zed_pipe_chance", 			"5", 	"How many chances throw the pipebomb trigger the slow motion", FCVAR_FLAG);
+	ZedWitch 			= CreateConVar("l4d2_zed_witch", 			"10", 	"How many chances kill  the witch    trigger the slow motion", FCVAR_FLAG);
+	ZedTank 			= CreateConVar("l4d2_zed_tank", 			"2",  	"How many chances kill  the tank     trigger the slow motion", FCVAR_FLAG);
+	ZedChargerExplosionChance 	= CreateConVar("l4d2_zed_charger_explosion_chance", 	"10", 	"How many chances does the boomer    trigger the slow motion", FCVAR_FLAG);
+	ZedSmokerExplosionChance 	= CreateConVar("l4d2_zed_smoker_explosion_chance", 	"10", 	"How many chances does the boomer    trigger the slow motion", FCVAR_FLAG);
+	ZedJockeyExplosionChance 	= CreateConVar("l4d2_zed_jackey_explosion_chance", 	"10", 	"How many chances does the boomer    trigger the slow motion", FCVAR_FLAG);
+	ZedHunterExplosionChance 	= CreateConVar("l4d2_zed_hunter_explosion_chance", 	"10", 	"How many chances does the boomer    trigger the slow motion", FCVAR_FLAG);
+	ZedBoomerExplosionChance 	= CreateConVar("l4d2_zed_boomer_explosion_chance", 	"5",  	"How many chances does the boomer    trigger the slow motion", FCVAR_FLAG);
 	HookEvent("player_death", Event_PlayerDeath);
 	HookEvent("melee_kill", Event_Melee);
 	HookEvent("tank_killed", Event_TankDeath);
