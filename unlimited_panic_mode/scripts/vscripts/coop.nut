@@ -27,14 +27,14 @@ Convars.SetValue( "rescue_distance", "1000" );
 Convars.SetValue( "rescue_min_dead_time", "10" );
 
 ::survivors <-{
-   Coach = "models/survivors/survivor_coach.mdl",
-   Ellis = "models/survivors/survivor_mechanic.mdl",
-   Nick = "models/survivors/survivor_gambler.mdl",
-   Rochelle = "models/survivors/survivor_producer.mdl",
-   Zoey = "models/survivors/survivor_teenangst.mdl",
-   Francis = "models/survivors/survivor_biker.mdl",
-   Louis = "models/survivors/survivor_manager.mdl",
-   Bill = "models/survivors/survivor_namvet.mdl"
+   Coach 	= "models/survivors/survivor_coach.mdl",
+   Ellis 	= "models/survivors/survivor_mechanic.mdl",
+   Nick 	= "models/survivors/survivor_gambler.mdl",
+   Rochelle 	= "models/survivors/survivor_producer.mdl",
+   Zoey 	= "models/survivors/survivor_teenangst.mdl",
+   Francis 	= "models/survivors/survivor_biker.mdl",
+   Louis 	= "models/survivors/survivor_manager.mdl",
+   Bill 	= "models/survivors/survivor_namvet.mdl"
 }
 
 function Precache()
@@ -57,7 +57,7 @@ DirectorOptions <-
 	cm_ProhibitBosses  =  true
 	ProhibitBosses  =  true
 	SpecialInfectedAssault = 4
-  SpecialRespawnInterval = 15
+  	SpecialRespawnInterval = 15
 	SpecialInitialSpawnDelayMin = 15
 	SpecialInitialSpawnDelayMax = 16
 	PreferredSpecialDirection = SPAWN_SPECIALS_ANYWHERE
@@ -88,30 +88,30 @@ DirectorOptions <-
 
 	weaponsToConvert =
 	{
-		weapon_pumpshotgun		    = "weapon_rifle_m60_spawn"
-		weapon_shotgun_chrome	    = "weapon_upgradepack_explosive_spawn"
-		weapon_autoshotgun 	    	= "weapon_pain_pills_spawn"
-		weapon_shotgun_spas     	= "weapon_upgradepack_explosive_spawn"
+		weapon_pumpshotgun		    	= "weapon_rifle_m60_spawn"
+		weapon_shotgun_chrome	    		= "weapon_upgradepack_explosive_spawn"
+		weapon_autoshotgun 	    		= "weapon_pain_pills_spawn"
+		weapon_shotgun_spas     		= "weapon_upgradepack_explosive_spawn"
 
-		weapon_smg_silenced		    = "weapon_pain_pills_spawn"
-		weapon_smg				        = "weapon_rifle_m60_spawn"
-		weapon_smg_mp5			      = "weapon_rifle_m60_spawn"
+		weapon_smg_silenced		    	= "weapon_pain_pills_spawn"
+		weapon_smg				= "weapon_rifle_m60_spawn"
+		weapon_smg_mp5			      	= "weapon_rifle_m60_spawn"
 
 		weapon_rifle 			        = "weapon_pain_pills_spawn"
-		weapon_rifle_desert 	    = "weapon_grenade_launcher_spawn"
-		weapon_rifle_ak47 		    = "weapon_rifle_m60_spawn"
-		weapon_rifle_sg552 		    = "weapon_grenade_launcher_spawn"
+		weapon_rifle_desert 	    		= "weapon_grenade_launcher_spawn"
+		weapon_rifle_ak47 		    	= "weapon_rifle_m60_spawn"
+		weapon_rifle_sg552 		    	= "weapon_grenade_launcher_spawn"
 
-		weapon_sniper_awp		      = "weapon_rifle_m60_spawn"
-		weapon_sniper_scout		    = "weapon_upgradepack_explosive_spawn"
-		weapon_sniper_military 	  = "weapon_pain_pills_spawn"
-		weapon_hunting_rifle	    = "weapon_grenade_launcher_spawn"
+		weapon_sniper_awp		      	= "weapon_rifle_m60_spawn"
+		weapon_sniper_scout		    	= "weapon_upgradepack_explosive_spawn"
+		weapon_sniper_military 	  		= "weapon_pain_pills_spawn"
+		weapon_hunting_rifle	    		= "weapon_grenade_launcher_spawn"
 
-		weapon_first_aid_kit	    = "weapon_pain_pills_spawn"
-		weapon_pain_pills		      = "weapon_pain_pills_spawn"
-		weapon_adrenaline		      = "weapon_upgradepack_explosive_spawn"
+		weapon_first_aid_kit	    		= "weapon_pain_pills_spawn"
+		weapon_pain_pills		      	= "weapon_pain_pills_spawn"
+		weapon_adrenaline		      	= "weapon_upgradepack_explosive_spawn"
 		weapon_pistol			        = "weapon_upgradepack_explosive_spawn"
-		weapon_pistol_magnum	    = "weapon_upgradepack_explosive_spawn"
+		weapon_pistol_magnum	    		= "weapon_upgradepack_explosive_spawn"
 
 		weapon_melee			        = "weapon_pain_pills_spawn"
 	}
@@ -128,15 +128,15 @@ DirectorOptions <-
 	{
 		//weapon_upgradepack_incendiary 	= 0
 		//weapon_upgradepack_explosive 		= 0
-		//weapon_rifle_m60					      = 0
-		//weapon_grenade_launcher 			  = 0
-		//weapon_chainsaw 					      = 0
-		weapon_defibrillator 				      = 0
-		//upgrade_item 						        = 0
-		weapon_pumpshotgun					      = 0
-		weapon_shotgun_chrome				      = 0
-		weapon_smg_silenced					      = 0
-		weapon_smg							          = 0
+		//weapon_rifle_m60			= 0
+		//weapon_grenade_launcher 		= 0
+		//weapon_chainsaw 			= 0
+		weapon_defibrillator 			= 0
+		//upgrade_item 				= 0
+		weapon_pumpshotgun			= 0
+		weapon_shotgun_chrome			= 0
+		weapon_smg_silenced			= 0
+		weapon_smg				= 0
 	}
 
 	function AllowWeaponSpawn( classname )
@@ -150,20 +150,20 @@ DirectorOptions <-
 
 	botAvoidItems =
 	{
-		weapon_hunting_rifle 		   = true
-		weapon_autoshotgun			   = true
-		weapon_rifle 				       = true
-		weapon_rifle_desert 		   = true
-		weapon_shotgun_spas 		   = true
-		weapon_rifle_ak47 			   = true
-		weapon_sniper_scout 		   = true
-		weapon_rifle_sg552			   = true
-		weapon_sniper_military 		 = true
-		weapon_weapon_pumpshotgun  = true
-		weapon_shotgun_chrome		   = true
-		weapon_smg_silenced			   = true
-		weapon_smg					       = true
-		weapon_pistol				       = true
+		weapon_hunting_rifle 		   	= true
+		weapon_autoshotgun			= true
+		weapon_rifle 				= true
+		weapon_rifle_desert 		   	= true
+		weapon_shotgun_spas 		   	= true
+		weapon_rifle_ak47 			= true
+		weapon_sniper_scout 		   	= true
+		weapon_rifle_sg552			= true
+		weapon_sniper_military 		 	= true
+		weapon_weapon_pumpshotgun  		= true
+		weapon_shotgun_chrome		   	= true
+		weapon_smg_silenced			= true
+		weapon_smg				= true
+		weapon_pistol				= true
 	}
 	function ShouldAvoidItem( classname )
 	{
@@ -178,8 +178,8 @@ DirectorOptions <-
                 "weapon_grenade_launcher",
                 "weapon_rifle_m60",
                 "weapon_pain_pills",
-				        "weapon_chainsaw",
-			          "weapon_upgradepack_explosive",
+		"weapon_chainsaw",
+		"weapon_upgradepack_explosive",
         ]
         function GetDefaultItem( idx )
         {
