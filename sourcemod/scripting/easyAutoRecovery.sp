@@ -2,20 +2,20 @@
 #include<sdktools>
 
 
-new Handle:l4d_recovery_hpH = INVALID_HANDLE;
-new Handle:l4d_recovery_hpM = INVALID_HANDLE;
-new Handle:l4d_recovery_hpL = INVALID_HANDLE;
+new Handle:l4d_recovery_hpH = 		INVALID_HANDLE;
+new Handle:l4d_recovery_hpM = 		INVALID_HANDLE;
+new Handle:l4d_recovery_hpL = 		INVALID_HANDLE;
 
-new Handle:l4d_recovery_quantityH = INVALID_HANDLE;
-new Handle:l4d_recovery_quantityM = INVALID_HANDLE;
-new Handle:l4d_recovery_quantityL = INVALID_HANDLE;
+new Handle:l4d_recovery_quantityH = 	INVALID_HANDLE;
+new Handle:l4d_recovery_quantityM = 	INVALID_HANDLE;
+new Handle:l4d_recovery_quantityL = 	INVALID_HANDLE;
 
-new Handle:l4d_recovery_durationH = INVALID_HANDLE;
-new Handle:l4d_recovery_durationM = INVALID_HANDLE;
-new Handle:l4d_recovery_durationL = INVALID_HANDLE;
+new Handle:l4d_recovery_durationH = 	INVALID_HANDLE;
+new Handle:l4d_recovery_durationM = 	INVALID_HANDLE;
+new Handle:l4d_recovery_durationL = 	INVALID_HANDLE;
 
-new Handle:l4d_recovery_limit = INVALID_HANDLE;
-new Handle:l4d_recovery_enable = INVALID_HANDLE;
+new Handle:l4d_recovery_limit = 	INVALID_HANDLE;
+new Handle:l4d_recovery_enable = 	INVALID_HANDLE;
 
 public Plugin:myinfo =
 {
@@ -50,16 +50,16 @@ public Action:OnPlayerRecovery(Event event, const char[] name, bool dontBroadcas
 	new Client      = GetClientOfUserId(GetEventInt(event,"userid"));
 	new iHealth     = GetEventInt(event, "health");
 	new hp_enable   =   GetConVarInt(l4d_recovery_enable);
-    if(hp_enable){
-        if(IsClientInGame(Client) && (GetClientTeam(Client) == 2)){
-            if(iHealth > GetConVarInt(l4d_recovery_hpH)){
+    	if(hp_enable){
+        	if(IsClientInGame(Client) && (GetClientTeam(Client) == 2)){
+            		if(iHealth > GetConVarInt(l4d_recovery_hpH)){
 				CreateTimer(GetConVarFloat(l4d_recovery_durationH), h_HPTimer, Client, 0);
-            }
-            else if(iHealth > GetConVarInt(l4d_recovery_hpM)){
-                CreateTimer(GetConVarFloat(l4d_recovery_durationM), m_HPTimer, Client, 0);
-            }
-            else if(iHealth > GetConVarInt(l4d_recovery_hpL)){
-                CreateTimer(GetConVarFloat(l4d_recovery_durationL), l_HPTimer, Client, 0);
+            		}
+            	else if(iHealth > GetConVarInt(l4d_recovery_hpM)){
+                	CreateTimer(GetConVarFloat(l4d_recovery_durationM), m_HPTimer, Client, 0);
+            		}
+            	else if(iHealth > GetConVarInt(l4d_recovery_hpL)){
+                	CreateTimer(GetConVarFloat(l4d_recovery_durationL), l_HPTimer, Client, 0);
 			}
 		}
 	}
