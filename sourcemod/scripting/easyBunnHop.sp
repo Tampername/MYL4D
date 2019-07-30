@@ -126,7 +126,6 @@ public Event_PlayerJumpApex(Handle:event, const String:name[], bool:dontBroadcas
 			ScaleVector(fLateralVector, GetVectorLength(fLateralVector) * 50.0);
 		GetEntPropVector(client, Prop_Data, "m_vecAbsVelocity", fNewVel);
 		for(new i=0;i<3;i++) fNewVel[i] += fLateralVector[i];
-
 		TeleportEntity(client, NULL_VECTOR, NULL_VECTOR,fNewVel);
 	}
 }
