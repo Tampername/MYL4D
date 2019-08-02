@@ -19,7 +19,7 @@ new Handle:h_Revive = INVALID_HANDLE;
 new Handle:h_Damage = INVALID_HANDLE;
 
 new bool:takeDamage = false;
-new i_count[MAXPLAYERS] = 0;
+new i_count[MAXPLAYERS+1] = 0;
 
 public OnPluginStart()
 {
@@ -48,8 +48,10 @@ public OnMapStart(){
 	SetConVarInt(FindConVar("z_versus_spitter_limit"), 0);
 	SetConVarFloat(FindConVar("survivor_revive_health"), GetConVarFloat(h_Revive));
 	for(int i = 1; i < MaxClients; i++){
-		if(!IsValidClient(i)){
-			KickClientEx(i);
+		if(IsClientInGame(i)){
+			if(!IsValidClient(i)){
+				KickClientEx(i);
+			}
 		}
 	}
 }
@@ -97,15 +99,17 @@ public Action:Event_Playerdeath(Handle:event, const String:name[], bool:dontBroa
 }
 
 public Action:Event_Playerteam(Handle:event, const String:name[], bool:dontBroadcast){
-	for(int i = 1; i < 32; i++){
-		if(!IsValidClient(i)){
-			KickClientEx(i);
+	for(int i = 1; i < MaxClients; i++){
+		if(IsClientInGame(i)){
+			if(!IsValidClient(i)){
+				KickClientEx(i);
+			}
 		}
 	}
 }
 
 public Action:Event_Roundstart(Handle:event, const String:name[], bool:dontBroadcast){
-	for(int i = 1; i < 32; i++){
+	for(int i = 1; i < MaxClients; i++){
 		i_count[i] = 0;
 	}
 }
