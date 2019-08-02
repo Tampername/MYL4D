@@ -25,7 +25,7 @@ public Action:Event_RoundStart( Handle:event, const String:name[], bool:dontBroa
 	{
 		if (IsClientInGame(i))
 		{
-               CanOpenT[i] = 0;
+               	 	CanOpenT[i] = 0;
 		}
      }
 }
@@ -35,25 +35,24 @@ public Action Player_Open(Handle:event, const String:name[], bool:dontBroadcast)
     new client = GetClientOfUserId(GetEventInt(event, "userid"));
     new targetid = GetEventInt(event, "targetid");
     if(client>0)
+    {
+	new String:entname[64];
+	if(GetEdictClassname(targetid, entname, sizeof(entname)))
 	{
-		new String:entname[64];
-		if(GetEdictClassname(targetid, entname, sizeof(entname)))
+		if(StrEqual(entname, "prop_door_rotating_checkpoint") && IsLeftStartAreaArea())
 		{
-			if(StrEqual(entname, "prop_door_rotating_checkpoint") && IsLeftStartAreaArea())
-			{
-                CanOpenT[client]++;
+                	CanOpenT[client]++;
                 if (CanOpenT[client] > 5)
                 {
                     AcceptEntityInput(targetid, "Lock");
                     CreateTimer(5.0, Allow, client);
                     PrintHintText(client, "\x03 You use the door too frequent, lock 5s!");
                 }
-				else
-				{
+		else
+		{
                     AcceptEntityInput(targetid, "Unlock");
                 }
-			}
-
+		}
         }
     }
     return Plugin_Continue;
@@ -81,7 +80,6 @@ bool:IsLeftStartAreaArea()
 			}
 		}
 	}
-
 	if (ent > -1)
 	{
 		new offset = FindSendPropInfo("CTerrorPlayerResource", "m_hasAnySurvivorLeftSafeArea");

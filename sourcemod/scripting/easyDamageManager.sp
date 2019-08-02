@@ -74,44 +74,44 @@ public OnPluginStart()
     h_9mm_headshot          = CreateConVar("l4d_damage_9mm_headshot",           "1.0", "damage coefficient of pistol|smg headshot",                 FCVAR_FLAG);
     h_9mm_headshot_ff       = CreateConVar("l4d_damage_9mm_headshot_ff",        "0.0", "damage coefficient of pistol|smg heashot to survivor",      FCVAR_FLAG);
 
-    h_5_56mm                = CreateConVar("l4d_damage_5_56mm", 				        "1.0", "damage coefficient of rifle|sniper",                        FCVAR_FLAG);
-    h_5_56mm_ff             = CreateConVar("l4d_damage_5_56mm_ff", 				      "0.0", "damage coefficient of rifle|sniper to survivor",            FCVAR_FLAG);
-    h_5_56mm_headshot       = CreateConVar("l4d_damage_5_56mm_headshot", 		    "1.0", "damage coefficient of rifle|sniper headshot",               FCVAR_FLAG);
-    h_5_56mm_headshot_ff    = CreateConVar("l4d_damage_5_56mm_headshot_ff", 	  "0.0", "damage coefficient of rifle|sniper headshot to survivor",   FCVAR_FLAG);
+    h_5_56mm                = CreateConVar("l4d_damage_5_56mm", 		"1.0", "damage coefficient of rifle|sniper",                        FCVAR_FLAG);
+    h_5_56mm_ff             = CreateConVar("l4d_damage_5_56mm_ff", 		"0.0", "damage coefficient of rifle|sniper to survivor",            FCVAR_FLAG);
+    h_5_56mm_headshot       = CreateConVar("l4d_damage_5_56mm_headshot", 	"1.0", "damage coefficient of rifle|sniper headshot",               FCVAR_FLAG);
+    h_5_56mm_headshot_ff    = CreateConVar("l4d_damage_5_56mm_headshot_ff", 	"0.0", "damage coefficient of rifle|sniper headshot to survivor",   FCVAR_FLAG);
 
-    h_7_62mm                = CreateConVar("l4d_damage_7_62mm", 				        "1.0", "damage coefficient of m60|minigun",                         FCVAR_FLAG);
-    h_7_62mm_ff             = CreateConVar("l4d_damage_7_62mm_ff", 				      "0.0", "damage coefficient of m60|minigun to survivor",             FCVAR_FLAG);
+    h_7_62mm                = CreateConVar("l4d_damage_7_62mm", 		"1.0", "damage coefficient of m60|minigun",                         FCVAR_FLAG);
+    h_7_62mm_ff             = CreateConVar("l4d_damage_7_62mm_ff", 		"0.0", "damage coefficient of m60|minigun to survivor",             FCVAR_FLAG);
 
-    h_18_4mm                = CreateConVar("l4d_damage_18_4mm", 				        "1.0", "damage coefficient of shotgun",                             FCVAR_FLAG);
-    h_18_4mm_ff             = CreateConVar("l4d_damage_18_4mm_ff", 				      "0.0", "damage coefficient of shutgun to survivor",                 FCVAR_FLAG);
+    h_18_4mm                = CreateConVar("l4d_damage_18_4mm", 		"1.0", "damage coefficient of shotgun",                             FCVAR_FLAG);
+    h_18_4mm_ff             = CreateConVar("l4d_damage_18_4mm_ff", 		"0.0", "damage coefficient of shutgun to survivor",                 FCVAR_FLAG);
 
     h_grenade_launcher      = CreateConVar("l4d_damage_grenade_launcher",       "1.0", "damage coefficient of grenade launcher",                    FCVAR_FLAG);
     h_grenade_launcher_ff   = CreateConVar("l4d_damage_grenade_launcher_ff",    "0.0", "damage coefficient of grenade launcher to survivor",        FCVAR_FLAG);
     h_grenade_launcher_self = CreateConVar("l4d_damage_grenade_launcher_self",  "5.0", "damage coefficient of grenade launcher to self",            FCVAR_FLAG);
 
-    h_infected_claw         = CreateConVar("l4d_damage_infected_claw", 			    "10.0", "damage coefficient of infected_claw",                      FCVAR_FLAG);
+    h_infected_claw         = CreateConVar("l4d_damage_infected_claw", 		"10.0", "damage coefficient of infected_claw",                      FCVAR_FLAG);
 
-    h_witch                 = CreateConVar("l4d_damage_witch", 					        "1.0", "damage coefficient of witch",                               FCVAR_FLAG);
+    h_witch                 = CreateConVar("l4d_damage_witch", 			"1.0", "damage coefficient of witch",                               FCVAR_FLAG);
 
-    h_smoker_choke          = CreateConVar("l4d_damage_smoker_choke", 			    "1.0", "damage coefficient of smoker_choke",                        FCVAR_FLAG);
-    h_spitter_spit          = CreateConVar("l4d_damage_spitter_spit", 			    "1.0", "damage coefficient of spitter_spit",                        FCVAR_FLAG);
+    h_smoker_choke          = CreateConVar("l4d_damage_smoker_choke", 		"1.0", "damage coefficient of smoker_choke",                        FCVAR_FLAG);
+    h_spitter_spit          = CreateConVar("l4d_damage_spitter_spit", 		"1.0", "damage coefficient of spitter_spit",                        FCVAR_FLAG);
 
-    h_melee                 = CreateConVar("l4d_damage_melee", 					        "1.0", "damage coefficient of melee",                               FCVAR_FLAG);
-    h_melee_ff              = CreateConVar("l4d_damage_melee_ff", 				      "0.0", "damage coefficient of melee to survivor",                   FCVAR_FLAG);
+    h_melee                 = CreateConVar("l4d_damage_melee", 			"1.0", "damage coefficient of melee",                               FCVAR_FLAG);
+    h_melee_ff              = CreateConVar("l4d_damage_melee_ff", 		"0.0", "damage coefficient of melee to survivor",                   FCVAR_FLAG);
 
-    h_explosion             = CreateConVar("l4d_damage_explosion", 				      "1.0", "damage coefficient of explosion",                           FCVAR_FLAG);
-    h_explosion_ff          = CreateConVar("l4d_damage_explosion_ff", 			    "0.0", "damage coefficient of explosion to survivor",               FCVAR_FLAG);
-    h_explosion_self        = CreateConVar("l4d_damage_explosion_self", 		    "5.0", "damage coefficient of explosion to self",                   FCVAR_FLAG);
+    h_explosion             = CreateConVar("l4d_damage_explosion", 		"1.0", "damage coefficient of explosion",                           FCVAR_FLAG);
+    h_explosion_ff          = CreateConVar("l4d_damage_explosion_ff", 		"0.0", "damage coefficient of explosion to survivor",               FCVAR_FLAG);
+    h_explosion_self        = CreateConVar("l4d_damage_explosion_self", 	"5.0", "damage coefficient of explosion to self",                   FCVAR_FLAG);
 
-    h_fall                  = CreateConVar("l4d_damage_fall", 					        "5.0", "damage coefficient of fall",                                FCVAR_FLAG);
+    h_fall                  = CreateConVar("l4d_damage_fall", 			"5.0", "damage coefficient of fall",                                FCVAR_FLAG);
 
-    h_drown                 = CreateConVar("l4d_damage_drown", 					        "10.0", "damage coefficient of drown",                               FCVAR_FLAG);
+    h_drown                 = CreateConVar("l4d_damage_drown", 			"10.0", "damage coefficient of drown",                               FCVAR_FLAG);
 
-    h_incapacitated         = CreateConVar("l4d_damage_incapacitated", 			    "10.0", "damage coefficient of bleed",                               FCVAR_FLAG);
+    h_incapacitated         = CreateConVar("l4d_damage_incapacitated", 		"10.0", "damage coefficient of bleed",                               FCVAR_FLAG);
 
-    h_fire                  = CreateConVar("l4d_damage_fire", 					        "1.0", "damage coefficient of fire",                                FCVAR_FLAG);
-    h_fire_ff               = CreateConVar("l4d_damage_fire_ff", 				        "0.0", "damage coefficient of fire to survivor",                    FCVAR_FLAG);
-    h_fire_self             = CreateConVar("l4d_damage_fire_self", 				      "5.0", "damage coefficient of fire to self",                        FCVAR_FLAG);
+    h_fire                  = CreateConVar("l4d_damage_fire", 			"1.0", "damage coefficient of fire",                                FCVAR_FLAG);
+    h_fire_ff               = CreateConVar("l4d_damage_fire_ff", 		"0.0", "damage coefficient of fire to survivor",                    FCVAR_FLAG);
+    h_fire_self             = CreateConVar("l4d_damage_fire_self", 		"5.0", "damage coefficient of fire to self",                        FCVAR_FLAG);
 
     AutoExecConfig(true, "l4d_DamageManager");
 }

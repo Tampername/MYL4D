@@ -25,8 +25,8 @@ public OnPluginStart()
 {
 	CreateConVar("l4d_11mod_Version", PLUGIN_VERSION, "The version of 11mod");
 
-	h_Revive = CreateConVar("l4d_revive", "30.0", "revive temp health buffer", FCVAR_FLAG);
-	h_Damage = CreateConVar("l4d_damage", "20", "a success attack damage to survivor", FCVAR_FLAG);
+	h_Revive = CreateConVar("l4d_revive", 	"30.0", "revive temp health buffer", 		FCVAR_FLAG);
+	h_Damage = CreateConVar("l4d_damage", 	"20", "a success attack damage to survivor", 	FCVAR_FLAG);
 
 	HookEvent("player_incapacitated", Event_Incapacitated);
 	HookEvent("player_death", Event_Playerdeath);
