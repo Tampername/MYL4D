@@ -35,6 +35,7 @@ function OnGameEvent_player_team(params)
 
 DirectorOptions <-
 {
+	
 	cm_CommonLimit = 0
 
     	weaponsToConvert =
