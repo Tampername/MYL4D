@@ -145,7 +145,7 @@ public Action:RevivePlayer(Handle:timer, any:client){
 		CreateTimer(0.1, Suicide, client);
 	}
 }
-/************************
+/***********************
 stock CheatCommand(client, const String:command[], const String:arguments[]){
 	if(!client){
 		return;
