@@ -8,15 +8,18 @@
 #define FCVAR_FLAG FCVAR_SPONLY|FCVAR_NOTIFY
 
 public Plugin:myinfo = {
-	name = "easy11mode",
+	name = "11mode",
 	author = "NiceT",
-	description = "easy11mode",
+	description = "11mode",
 	version = PLUGIN_VERSION,
 	url = ""
 };
 
-new Handle:h_Revive = INVALID_HANDLE;
-new Handle:h_Damage = INVALID_HANDLE;
+new Handle:h_Revive 	= INVALID_HANDLE;
+new Handle:h_Damage 	= INVALID_HANDLE;
+new Handle:h_Shove_max	= INVALID_HANDLE;
+new Handle:h_Shove_min	= INVALID_HANDLE;
+new Handle:h_Restore	= INVALID_HANDLE;
 
 new bool:takeDamage = false;
 new i_count[MAXPLAYERS+1] = 0;
@@ -25,8 +28,11 @@ public OnPluginStart()
 {
 	CreateConVar("l4d_11mod_Version", PLUGIN_VERSION, "The version of 11mod");
 
-	h_Revive = CreateConVar("l4d_revive", 	"30.0", "revive temp health buffer", 		FCVAR_FLAG);
-	h_Damage = CreateConVar("l4d_damage", 	"20", "a success attack damage to survivor", 	FCVAR_FLAG);
+	h_Revive	= CreateConVar("l4d_revive", "30.0", "revive temp health buffer", FCVAR_FLAG);
+	h_Damage	= CreateConVar("l4d_damage", "20", "a success attack damage to survivor", FCVAR_FLAG);
+	h_Shove_max	= CreateConVar("l4d_shove_max", "1", "the max times survivor can shove", FCVAR_FLAG);
+	h_Shove_min	= CreateConVar("l4d_shove_min", "1", "the min times survivor can shove", FCVAR_FLAG);
+	h_Restore	= CreateConVar("l4d_shove_restore", "0.7", "how many seconds survivor can shove", FCVAR_FLAG);
 
 	HookEvent("player_incapacitated", Event_Incapacitated);
 	HookEvent("player_death", Event_Playerdeath);
@@ -47,19 +53,15 @@ public OnMapStart(){
 	SetConVarInt(FindConVar("z_versus_smoker_limit"), 0);
 	SetConVarInt(FindConVar("z_versus_spitter_limit"), 0);
 	SetConVarFloat(FindConVar("survivor_revive_health"), GetConVarFloat(h_Revive));
-	for(int i = 1; i < MaxClients; i++){
-		if(IsClientInGame(i)){
-			if(!IsValidClient(i)){
-				KickClientEx(i);
-			}
-		}
-	}
-}
 
+	SetConVarInt(FindConVar("z_gun_swing_vs_max_penalty"), GetConVarInt(h_Shove_max));
+	SetConVarInt(FindConVar("z_gun_swing_vs_min_penalty"), GetConVarInt(h_Shove_min));
+	SetConVarFloat(FindConVar("z_gun_swing_vs_restore_time"), GetConVarFloat(h_Restore));
+}
 
 public OnClientPutInServer(client)
 {
-	if(IsValidClient(client))
+	if(IsClientInGame(client))
 	{
 		SDKHook(client, SDKHook_OnTakeDamage, OnTakeDamage);
 	}
@@ -71,18 +73,6 @@ public OnClientDisconnect(client)
 	{
 		SDKUnhook(client, SDKHook_OnTakeDamage, OnTakeDamage);
 	}
-}
-
-stock bool:IsValidClient(client)
-{
-	if(client>0 && client<=MaxClients)
-	{
-		if(IsClientInGame(client) && !IsFakeClient(client))
-		{
-			return true;
-		}
-	}
-	return false;
 }
 
 public Action:Event_Incapacitated(Handle:event, const String:name[], bool:dontBroadcast){
@@ -99,22 +89,28 @@ public Action:Event_Playerdeath(Handle:event, const String:name[], bool:dontBroa
 }
 
 public Action:Event_Playerteam(Handle:event, const String:name[], bool:dontBroadcast){
-	for(int i = 1; i < MaxClients; i++){
-		if(IsClientInGame(i)){
-			if(!IsValidClient(i)){
-				KickClientEx(i);
+	decl String:id[16];
+	for (new i = 1;i <= MaxClients; i++)
+	{
+		if (IsClientConnected(i) && IsClientInGame(i))
+		{
+				
+			GetClientAuthId(i, AuthId_Steam2, id, sizeof(id));
+			if ((StrEqual(id, "BOT")))	
+			{
+				KickClient(i);
 			}
 		}
 	}
 }
 
 public Action:Event_Roundstart(Handle:event, const String:name[], bool:dontBroadcast){
-	for(int i = 1; i < MaxClients; i++){
+	for(new i = 1; i < MaxClients; i++){
 		i_count[i] = 0;
 	}
 }
 
-public Action:OnTakeDamage(victim, &attacker, &inflictor, &Float:damage, &damagetype)
+public Action:OnTakeDamage(victim, &attacker, &inflictor, &Float:damage, &damagetype) 
 {
 	if(GetClientTeam(attacker) == 3 && !takeDamage){
 		damage = GetConVarFloat(h_Damage);
@@ -145,7 +141,7 @@ public Action:RevivePlayer(Handle:timer, any:client){
 		CreateTimer(0.1, Suicide, client);
 	}
 }
-/***********************
+/************************
 stock CheatCommand(client, const String:command[], const String:arguments[]){
 	if(!client){
 		return;
@@ -156,7 +152,7 @@ stock CheatCommand(client, const String:command[], const String:arguments[]){
 	SetCommandFlags(command, flags & ~FCVAR_CHEAT);
 	FakeClientCommand(client, "%s %s", command, arguments);
 	SetCommandFlags(command, flags);
-	SetUserFlagBits(client, admindata);
+	SetUserFlagBits(client, admindata);  
 }
 
 public Action:RevivePlayer2(Handle:timer, any:client){
