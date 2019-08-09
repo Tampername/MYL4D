@@ -11,8 +11,8 @@ metamod:
         stripper.vdf
 
 stripper:
-        all files 
-        
+        all files
+  
 
 11mode:
       a mode for 1 VS 1
