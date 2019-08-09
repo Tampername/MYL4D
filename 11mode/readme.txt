@@ -7,6 +7,12 @@ sourcemod:
         scripting:
                 easy11mode.smx(compiled from easy11mode.sp)
 
+metamod:
+        stripper.vdf
+
+stripper:
+        all files
+
 
 11mode:
       a mode for 1 VS 1
