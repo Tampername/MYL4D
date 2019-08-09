@@ -1,41 +1,9 @@
 Msg("versus\n");
 
-::GetPush <- function(player)
-{
-	local Key =
-	{
-		magnitude = SetMagnitude,
-		radius = 200,
-		inner_radius = 1,
-		spawnflags = 24,
-	}
-	local _getpush = Utils.CreateEntity("point_push", Entity(player).GetEyePosition(), Entity(player).GetAngles(), Key);
-	_getpush.Input("Enable", player);
-	Timers.AddTimer(1.0, false, DeletePush, GetPush);
-}
-
-::DeletePush <- function(push)
-{
-	if(Entity(push).GetClassname().tolower() == "point_push")
-	{
-		push.Input("Disable");
-		push.Input("Kill");
-		Utils.RemoveEntity(push);
-	}
-}
-
-function OnGameEvent_player_team(params)
-{
-	local player = GetPlayerFromUserID(params.userid);
-	if(Player.GetClassname() == "player" && Player.IsSurvivor())
-	{
-		GetPush(player);
-	}
-}
-
 DirectorOptions <-
 {
 	cm_CommonLimit = 0
+	ProhibitBosses = true
 
     	weaponsToConvert =
 	{
