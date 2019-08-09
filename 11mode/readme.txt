@@ -11,7 +11,7 @@ metamod:
         stripper.vdf
 
 stripper:
-        all files
+        all files 
         
 
 11mode:
