@@ -34,6 +34,7 @@ function OnGameEvent_round_start(params)
 	for(local i=0;i<=32;i+=1)
 	{
 		FF_damage[i] <- 0;
+<<<<<<< HEAD
 		PZ_kill[i] <- 0;
 		HP_hard[i] <- 0;
 		HP_tmp[i] <- 0;
@@ -53,6 +54,25 @@ function OnGameEvent_player_team(params)
 		PZ_kill[Player.GetEntityIndex()] = 0;
 		HP_hard[Player.GetEntityIndex()] = 100;
 		HP_tmp[Player.GetEntityIndex()] = 0;
+=======
+    		PZ_kill[i] <- 0;
+    		HP_hard[i] <- 0;
+    		HP_tmp[i] <- 0;
+	}
+}
+
+function OnGameEvent_player_team(params){
+	local disconnect = false;
+	local Player = GetPlayerFromUserID(params.userid);
+	if(!Player.GetClassname() == "player" || !Player.IsSurvivor())  return;
+	disconnect = params["disconnect"];
+	if(disconnect)
+	{
+    		FF_damage[i] <- 0;
+    		PZ_kill[i] <- 0;
+    		HP_hard[i] <- 0;
+    		HP_tmp[i] <- 0;
+>>>>>>> 7963663d7e6b2be4f298a4a9f81b20a7456ec2fe
 	}
 }
 
@@ -60,8 +80,12 @@ function OnGameEvent_player_death(params)
 {
 	local attacker = GetPlayerFromUserID(params.attacker);
 	local victim = GetPlayerFromUserID(params.userid);
+<<<<<<< HEAD
 	if(!IsPlayerABot(attacker) && victim.GetZombieType() <= 8)
 	{	
+=======
+	if(victim > 0 && attacker > 0 &&  victim.GetZombieType <= 8){
+>>>>>>> 7963663d7e6b2be4f298a4a9f81b20a7456ec2fe
 		PZ_kill[attacker.GetEntityIndex()]++;
 	}
 }
@@ -70,11 +94,25 @@ function OnGameEvent_player_hurt(params){ //friendly fire damage
 	local attacker = GetPlayerFromUserID(params.attacker);
 	local victim = GetPlayerFromUserID(params.userid);
 	local damage = 0;
+<<<<<<< HEAD
 	if(!victim.IsSurvivor() || !attacker.IsSurvivor())  return;
 	damage = params["dmg_health"];
 	if(damage > 0)
 	{
 		FF_damage[attacker.GetEntityIndex()] += damage;
+=======
+	if(!attacker.IsSurvivor())  return;
+	damage = params["dmg_healith"];
+	if(damage > 0){
+	FF_damage[attacker.GetEntityIndex()]++;
+	}
+}
+
+function setSurvivorsHp(index){  //HP
+	for(local i = 0; i < index.len(); i++){
+	HP_hard[index[i]] = PlayerInstanceFromIndex(index[i]).GetHealth();
+	HP_tmp[index[i]] = PlayerInstanceFromIndex(index[i]).GetHealthBuffer();
+>>>>>>> 7963663d7e6b2be4f298a4a9f81b20a7456ec2fe
 	}
 }
 
@@ -155,12 +193,29 @@ function Update()
 	CustomHud();	
 }
 
+<<<<<<< HEAD
 function setSurvivorsHp(index){  //HP
 	for(local i = 0; i < index.len(); i++)
 	{
 		HP_hard[index[i]] = PlayerInstanceFromIndex(index[i]).GetHealth();
 		HP_tmp[index[i]] = PlayerInstanceFromIndex(index[i]).GetHealthBuffer();
 	}
+=======
+function CustomHud(){
+  HUDINFO <-
+  {
+    Fileds =
+    {
+      PZ_kill_Hud = {slot = HUD_FAR_LEFT, dataval = ::_StrShow_pz, flags = HUD_FLAG_NOBG|HUD_FLAG_COUNTDOWN_WARN}
+      FF_damage_Hud = {slot = HUD_FAR_RIGHT, dataval = ::_StrShow_ff, flags = HUD_FLAG_NOBG|HUD_FLAG_COUNTDOWN_WARN}
+      HP_remain_Hud = {slot = HUD_MID_TOP, dataval = ::_StrShow_hp, flags = HUD_FLAG_NOBG|HUD_FLAG_COUNTDOWN_WARN}
+    }
+  }
+	HUDSetLayout( HUDINFO);
+	HUDPlace(HUD_FAR_LEFT, 0.0, 0.0, 0.4, 0.6);
+	HUDPlace(HUD_FAR_RIGHT, 0.0, 0.0, 0.4, 0.6);
+	HUDPlace(HUD_MID_TOP, 0.0, 0.0, 0.4, 0.6);
+>>>>>>> 7963663d7e6b2be4f298a4a9f81b20a7456ec2fe
 }
 
 function CustomHud()                     
