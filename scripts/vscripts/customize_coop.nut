@@ -403,7 +403,6 @@ But I don't know how to fix it......
 ::itemNameAssociation <- function(itemname){
 	switch(itemname){
 		case "adren":
-			return "adrenaline";
 		case "adrenal":
 			return "adrenaline";
 		case "auto":
@@ -415,9 +414,7 @@ But I don't know how to fix it......
 		case "firework":
 			return "fireworkcrate";
 		case "first":
-			return "first_aid_kit";
 		case "aid":
-			return "first_aid_kit";
 		case "kit":
 			return "first_aid_kit";
 		case "gas":
@@ -441,11 +438,9 @@ But I don't know how to fix it......
 		case "oxygen":
 			return "oxygentank";
 		case "pill":
-			return "pain_pills";
 		case "pills":
 			return "pain_pills";
 		case "pipe":
-			return "pipe_bomb";
 		case "bomb":
 			return "pipe_bomb";
 		case "magnum":
@@ -457,7 +452,6 @@ But I don't know how to fix it......
 		case "m16":
 			return "rifle";
 		case "ak47":
-			return "rifle_ak47";
 		case "ak":
 			return "rifle_ak47";
 		case "scar":
