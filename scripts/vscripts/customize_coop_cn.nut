@@ -28,8 +28,8 @@ function Precache()
 
 ::g_SpecialInfo <- "";
 ::g_CommonInfo <- "";
-::g_SteamUrl <- "https://steamcommunity.com/sharedfiles/\nfiledetails/?id=1837443373";
-::g_GitHubUrl <- "https://github.com/Life4gal/MYL4D/blob/master/scripts/\nvscripts/customize_coop_cn.nut";
+::g_SteamUrl <- "https://steamcommunity.com/sharedfiles/\nfiledetails/?id=1861743382";
+::g_GitHubUrl <- "https://github.com/Life4gal/MYL4D/blob/master/\nscripts/vscripts/customize_coop_cn.nut";
 //::GiveWithCoolDown <- false;
 
 DirectorOptions <-

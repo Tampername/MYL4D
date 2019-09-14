@@ -28,7 +28,7 @@ function Precache()
 
 ::g_SpecialInfo <- "";
 ::g_CommonInfo <- "";
-::g_SteamUrl <- "https://steamcommunity.com/sharedfiles/\nfiledetails/?id=1837443373";
+::g_SteamUrl <- "https://steamcommunity.com/sharedfiles/\nfiledetails/?id=1861743382";
 ::g_GitHubUrl <- "https://github.com/Life4gal/MYL4D/blob/master/\nscripts/vscripts/customize_coop.nut";
 //::GiveWithCoolDown <- false;
 
@@ -143,7 +143,7 @@ function ChatTriggers::help(player, args, text){
 
 //================================= Impl ================================
 /*
-When the function is called all the extra parameters will be accessible 
+When the function is called all the extra parameters will be accessible
 through the array called vargv, that is passed as implicit parameter.
 vargv is a regular squirrel array and can be used accordingly.
 */
@@ -171,7 +171,7 @@ vargv is a regular squirrel array and can be used accordingly.
 					return;
 				}
 				local _max = 0;
-				if(!g_SpecialMax && !g_BoomerLimit && !g_HunterLimit && !g_SpitterLimit && !g_ChargerLimit && !g_SmokerLimit){	
+				if(!g_SpecialMax && !g_BoomerLimit && !g_HunterLimit && !g_SpitterLimit && !g_ChargerLimit && !g_SmokerLimit){
 					_max = vargv[2];
 					while(_max > 0){
 						switch(RandomInt(0, 5)){
@@ -365,7 +365,7 @@ vargv is a regular squirrel array and can be used accordingly.
 //		Timers.AddTimer(5.0, false, (function(){ GiveWithCoolDown = false;}));
 /*
 An Error in here:
-	
+
 AN ERROR HAS OCCURED [wrong number of parameters]
 CALLSTACK
 *FUNCTION [unknown()] f:/steam/steamapps/common/left 4 dead 2/left4dead2/scripts/vscripts/VSLib/Timer.nut line [190]
@@ -502,7 +502,7 @@ HUD TYPE:
 		_hud.AttachTo(HUD_MID_BOX);
         _hud.ChangeHUDNative(0, 0, 350, 250, 1366, 720);
         _hud.SetTextPosition(TextAlign.Left);
-        _hud.AddFlag(g_ModeScript.HUD_FLAG_NOBG|HUD_FLAG_BLINK); 
+        _hud.AddFlag(g_ModeScript.HUD_FLAG_NOBG|HUD_FLAG_BLINK);
         Timers.AddTimer(6.0, false, CloseHud, _hud);
 	}
 	else if(hudtype == 1){
@@ -513,7 +513,7 @@ HUD TYPE:
 		_hud.AttachTo(HUD_MID_BOX);
         _hud.ChangeHUDNative(0, 0, 350, 250, 1366, 720);
         _hud.SetTextPosition(TextAlign.Left);
-        _hud.AddFlag(g_ModeScript.HUD_FLAG_NOBG|HUD_FLAG_BLINK); 
+        _hud.AddFlag(g_ModeScript.HUD_FLAG_NOBG|HUD_FLAG_BLINK);
         Timers.AddTimer(6.0, false, CloseHud, _hud);
 	}
 	else if(hudtype == 2){
@@ -524,7 +524,7 @@ HUD TYPE:
 		_hud.AttachTo(HUD_MID_BOX);
         _hud.ChangeHUDNative(0, 0, 350, 250, 1366, 720);
         _hud.SetTextPosition(TextAlign.Left);
-        _hud.AddFlag(g_ModeScript.HUD_FLAG_NOBG|HUD_FLAG_BLINK); 
+        _hud.AddFlag(g_ModeScript.HUD_FLAG_NOBG|HUD_FLAG_BLINK);
         Timers.AddTimer(6.0, false, CloseHud, _hud);
 	}
 	else if(hudtype == 3){
@@ -533,7 +533,7 @@ HUD TYPE:
 		_hud.AttachTo(HUD_MID_BOX);
         _hud.ChangeHUDNative(0, 0, 250, 100, 1366, 720);
         _hud.SetTextPosition(TextAlign.Left);
-        _hud.AddFlag(g_ModeScript.HUD_FLAG_NOBG|HUD_FLAG_BLINK); 
+        _hud.AddFlag(g_ModeScript.HUD_FLAG_NOBG|HUD_FLAG_BLINK);
         Timers.AddTimer(6.0, false, CloseHud, _hud);
 	}
 	else if(hudtype == 4){
@@ -543,7 +543,7 @@ HUD TYPE:
 		_hud.AttachTo(HUD_MID_BOX);
 		_hud.ChangeHUDNative(0, 0, 450, 250, 1366, 720);
 		_hud.SetTextPosition(TextAlign.Left);
-		_hud.AddFlag(g_ModeScript.HUD_FLAG_NOBG|HUD_FLAG_BLINK); 
+		_hud.AddFlag(g_ModeScript.HUD_FLAG_NOBG|HUD_FLAG_BLINK);
 		Timers.AddTimer(6.0, false, CloseHud, _hud);
 	}
 	else if(hudtype == 5){
@@ -555,7 +555,7 @@ HUD TYPE:
 		_hud.AttachTo(HUD_MID_BOX);
 		_hud.ChangeHUDNative(0, 0, 400, 200, 1366, 720);
 		_hud.SetTextPosition(TextAlign.Left);
-		_hud.AddFlag(g_ModeScript.HUD_FLAG_NOBG|HUD_FLAG_BLINK); 
+		_hud.AddFlag(g_ModeScript.HUD_FLAG_NOBG|HUD_FLAG_BLINK);
 		Timers.AddTimer(6.0, false, CloseHud, _hud);
 
 		local _Steam = HUD.Item("\n{steamUrl}\n");
@@ -563,7 +563,7 @@ HUD TYPE:
 		_Steam.AttachTo(HUD_SCORE_2);
 		_Steam.ChangeHUDNative(0, 120, 550, 200, 1366, 720);
 		_Steam.SetTextPosition(TextAlign.Left);
-		_Steam.AddFlag(g_ModeScript.HUD_FLAG_NOBG|HUD_FLAG_BLINK); 
+		_Steam.AddFlag(g_ModeScript.HUD_FLAG_NOBG|HUD_FLAG_BLINK);
 		Timers.AddTimer(6.0, false, CloseHud, _Steam);
 
 		local _GitHub = HUD.Item("\n{githubUrl}\n");
@@ -571,7 +571,7 @@ HUD TYPE:
 		_GitHub.AttachTo(HUD_SCORE_3);
 		_GitHub.ChangeHUDNative(0, 225, 600, 200, 1366, 720);
 		_GitHub.SetTextPosition(TextAlign.Left);
-		_GitHub.AddFlag(g_ModeScript.HUD_FLAG_NOBG|HUD_FLAG_BLINK); 
+		_GitHub.AddFlag(g_ModeScript.HUD_FLAG_NOBG|HUD_FLAG_BLINK);
 		Timers.AddTimer(6.0, false, CloseHud, _GitHub);
 		Utils.SayToAll("Workshop:" + g_SteamUrl);
 		Utils.SayToAll("GitHub:" + g_GitHubUrl);
@@ -590,7 +590,7 @@ HUD TYPE:
 
 
 function Update(){
-	
+
 	local _HumanCount = 0;
 	_HumanCount = getHumanCount();
 
@@ -645,4 +645,3 @@ function Update(){
 	g_CommonInfo = "Common : " + "[(" + DirectorOptions.cm_CommonLimit + ")]";
 	g_SpecialInfo = "Special : " + "[(" + DirectorOptions.cm_MaxSpecials + ") SI (" + DirectorOptions.cm_SpecialRespawnInterval +")s respawn]";
 }
-
